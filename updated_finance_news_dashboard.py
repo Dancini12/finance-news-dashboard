@@ -1,12 +1,11 @@
-
 import streamlit as st
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 from typing import List, Dict
 
-# Placeholder for NewsAPI key
-NEWSAPI_KEY = 'b99e24b789f043499c2fb89f2b73f7d5'
+# Obtém a chave da NewsAPI a partir dos "Secrets" do Streamlit
+NEWSAPI_KEY = st.secrets["b99e24b789f043499c2fb89f2b73f7d5"]
 
 # Function to get news from Google News using NewsAPI
 def get_news_from_newsapi(api_key: str, query: str = "mercado financeiro", language: str = "pt") -> List[Dict[str, str]]:
